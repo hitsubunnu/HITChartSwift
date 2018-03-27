@@ -47,10 +47,10 @@ See [HITChartSwiftSample](https://github.com/hitsubunnu/HITChartSwift/blob/maste
 
 ### Interface Builder Way
 
-Setup custom class to YieldCurveChartView 
+#####Setup custom class to YieldCurveChartView 
 ![](https://github.com/hitsubunnu/HITChartSwift/blob/master/images/ib-1.png)
 
-Setup options
+#####Setup options
 ![](https://github.com/hitsubunnu/HITChartSwift/blob/master/images/ib-2.png)
 
 ### License
