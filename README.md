@@ -39,17 +39,18 @@ import HITChartSwift
 ```
 
 ```
-    let chart = YieldCurveChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.height, height: UIScreen.main.bounds.width))
-    view.addSubview(chart)
-    chart.draw(absMax, values: data.map{ $0.change }, dates: dates, titles: title)
+let chart = YieldCurveChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.height, height: UIScreen.main.bounds.width))
+view.addSubview(chart)
+chart.draw(absMax, values: data.map{ $0.change }, dates: dates, titles: title)
 ```
 See [HITChartSwiftSample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift)
 
 ### Interface Builder Way
-### Setup custom class to YieldCurveChartView 
+
+Setup custom class to YieldCurveChartView 
 ![](https://github.com/hitsubunnu/HITChartSwift/blob/master/images/ib-1.png)
 
-### Setup options
+Setup options
 ![](https://github.com/hitsubunnu/HITChartSwift/blob/master/images/ib-2.png)
 
 ### License
