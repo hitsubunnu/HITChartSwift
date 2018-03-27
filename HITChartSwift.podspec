@@ -10,11 +10,11 @@ Pod::Spec.new do |s|
   s.name         = "HITChartSwift"
   s.version      = "0.0.1"
   s.summary      = "A bitcoin and stock chart lib for iOS."
+  s.homepage     = "https://github.com/hitsubunnu/HITChartSwift"
   s.license      = "MIT"
   s.author       = { "hitsubunnu" => "idhitsu@gmail.com" }
   s.swift_version = "4.0"
-  s.platform     = :ios
-  s.source       = { :git => "git@github.com:hitsubunnu/HITChartSwift.git", :tag => "#{s.version}" }
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  s.ios.deployment_target = "9.0"
+  s.source       = { :git => "https://github.com/hitsubunnu/HITChartSwift.git", :tag => "#{s.version}" }
+  s.source_files  = "HITChartSwift/*", "HITChartSwift/**/*.swift"
 end
