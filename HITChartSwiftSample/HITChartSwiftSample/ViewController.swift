@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         let dates: [Date] = data.map { return dateFormatter.date(from: $0.date) ?? Date() }
         
         /// title
-        let title = data.map { "closing price: \($0.close) change: \($0.change)%  volume: \($0.volume)" }
+        let title = data.map { "BTC/USD closing price: \($0.close) change: \($0.change)%  volume: \($0.volume)" }
         
         // init chart
         let chart = YieldCurveChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.height, height: UIScreen.main.bounds.width))

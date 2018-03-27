@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
   s.summary      = "A bitcoin and stock chart lib for iOS."
   s.license      = "MIT"
   s.author       = { "hitsubunnu" => "idhitsu@gmail.com" }
+  s.swift_version = "4.0"
   s.platform     = :ios
   s.source       = { :git => "git@github.com:hitsubunnu/HITChartSwift.git", :tag => "#{s.version}" }
   s.source_files  = "Classes", "Classes/**/*.{h,m}"
