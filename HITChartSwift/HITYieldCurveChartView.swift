@@ -1,5 +1,5 @@
 //
-//  YieldCurveChartView.swift
+//  HITYieldCurveChartView.swift
 //  HITChartSwift
 //
 //  Created by hitsubunnu on 2018/03/22.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class YieldCurveChartView: UIView {
+open class HITYieldCurveChartView: UIView {
     @IBInspectable var background: UIColor = UIColor.white
     @IBInspectable var lineColor: UIColor = UIColor.color("0x0099aa")
     @IBInspectable var titleColor: UIColor = UIColor.color("0x0099aa")
@@ -106,8 +106,8 @@ open class YieldCurveChartView: UIView {
         let yText = y - textHeight / 2
         text.string = string
         text.foregroundColor = textColor.cgColor
-        text.fontSize = Dimens.Txt.s.rawValue
-        text.font = UIFont.systemFont(ofSize: Dimens.Txt.s.rawValue)
+        text.fontSize = HITDimens.Txt.s.rawValue
+        text.font = UIFont.systemFont(ofSize: HITDimens.Txt.s.rawValue)
         text.frame = CGRect(x: xText, y: yText, width: textWidth, height: textHeight)
         text.contentsScale = UIScreen.main.scale
         text.alignmentMode = kCAAlignmentCenter
@@ -132,8 +132,8 @@ open class YieldCurveChartView: UIView {
             let layer = CATextLayer()
             layer.string = choosedDate.date.yyyy_mm_dd()
             layer.foregroundColor = textColor.cgColor
-            layer.fontSize = Dimens.Txt.s.rawValue
-            layer.font = UIFont.systemFont(ofSize: Dimens.Txt.s.rawValue)
+            layer.fontSize = HITDimens.Txt.s.rawValue
+            layer.font = UIFont.systemFont(ofSize: HITDimens.Txt.s.rawValue)
             layer.frame = CGRect(x: x, y: y, width: layerWidth, height: layerHeight)
             layer.contentsScale = UIScreen.main.scale
             layer.alignmentMode = kCAAlignmentCenter
@@ -233,14 +233,14 @@ open class YieldCurveChartView: UIView {
         let width = bounds.width
         let height = bounds.height
         let x: CGFloat = (width - width * kWidthRatio) / 2
-        let y: CGFloat = (height - height*kHeightRatio)/4 - Dimens.Txt.l.rawValue/2
+        let y: CGFloat = (height - height*kHeightRatio)/4 - HITDimens.Txt.l.rawValue/2
         let textWidth: CGFloat = width*kWidthRatio
         let textHeight: CGFloat = 20.0
         
         setupTitleText(titles.last)
         titleText.foregroundColor = titleColor.cgColor
-        titleText.fontSize = Dimens.Txt.l.rawValue
-        titleText.font = UIFont.boldSystemFont(ofSize: Dimens.Txt.l.rawValue)
+        titleText.fontSize = HITDimens.Txt.l.rawValue
+        titleText.font = UIFont.boldSystemFont(ofSize: HITDimens.Txt.l.rawValue)
         titleText.frame = CGRect(x: x, y: y, width: textWidth, height: textHeight)
         titleText.contentsScale = UIScreen.main.scale
         titleText.alignmentMode = kCAAlignmentLeft
@@ -299,7 +299,7 @@ open class YieldCurveChartView: UIView {
         indicatorText.alignmentMode = kCAAlignmentCenter
         indicatorText.foregroundColor = UIColor.white.cgColor
         indicatorText.backgroundColor = indicatorColor.cgColor
-        indicatorText.fontSize = Dimens.Txt.s.rawValue
+        indicatorText.fontSize = HITDimens.Txt.s.rawValue
         indicatorText.font = UIFont.boldSystemFont(ofSize: 9)
         indicatorText.frame = CGRect(x: xText, y: absMinY + margin, width: kIndicatorTextWidth, height: kIndicatorTextHeight)
         indicatorText.contentsScale = UIScreen.main.scale

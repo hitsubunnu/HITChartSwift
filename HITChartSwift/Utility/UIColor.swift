@@ -30,7 +30,7 @@ extension UIColor {
      @param alpha: Alpha
      */
     class func color(_ hex: String, alpha: CGFloat = 1.0) -> UIColor {
-        let hexColor = hex.replacingOccurrences(of: Sign.sharp.rawValue, with: Sign.empty.rawValue)
+        let hexColor = hex.replacingOccurrences(of: "#", with: "")
         let scanner = Scanner(string: hexColor)
         var color: UInt32 = 0
         if scanner.scanHexInt32(&color) {

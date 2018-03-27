@@ -1,5 +1,5 @@
 //
-//  Dimens.swift
+//  HITDimens.swift
 //  HITChartSwift
 //
 //  Created by hitsubunnu on 2018/03/22.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Dimens {
+struct HITDimens {
     enum Txt: CGFloat {
         case xs     = 10
         case s      = 12
