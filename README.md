@@ -1,6 +1,10 @@
 # HITChartSwift
 A bitcoin and stock chart lib for iOS. Written in Swift.
 
+## line chart
+closing price chart:
+![](https://github.com/hitsubunnu/HITChartSwift/blob/master/images/close.gif)
+
 yield curve chart:
 ![](https://github.com/hitsubunnu/HITChartSwift/blob/master/images/yieldcurve.gif)
 
@@ -39,9 +43,9 @@ import HITChartSwift
 ```
 
 ```
-let chart = HITYieldCurveChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.height, height: UIScreen.main.bounds.width))
+let chart = HITLineChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.height, height: UIScreen.main.bounds.width))
 view.addSubview(chart)
-chart.draw(absMax, values: data.map{ $0.change }, dates: dates, titles: title)
+chart.draw(absMax, values: data.map{ $0.change }, label: (max: max, center: "", min: min), dates: dates, titles: titles)
 ```
 See [HITChartSwiftSample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift)
 

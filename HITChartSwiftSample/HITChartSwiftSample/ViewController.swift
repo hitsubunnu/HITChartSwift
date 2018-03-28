@@ -43,31 +43,62 @@ class ViewController: UIViewController {
         (date: "2018/03/23", close: 8440.00, open: 8703.80, high: 8720.00, low: 8333.40, volume: 60.51, change: -3.06)
     ]
 
+    private var absMax = 0
+    private var dates = [Date]()
+    private var titles = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // data format
+        formatData()
+    }
+    
+    private func formatData() {
         /// absMax
-        let max = abs(data.map{ $0.change }.max() ?? 0)
-        let min = abs(data.map{ $0.change }.min() ?? 0)
-        let absMax = max > min ? Int(max) : Int(min)
+        let max = abs(data.map{ $0.change }.max() ?? 0.0).rounded(.up)
+        let min = abs(data.map{ $0.change }.min() ?? 0.0).rounded(.up)
+        absMax = Int(max > min ? max : min)
         
         /// date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT+9:00")
-        let dates: [Date] = data.map { return dateFormatter.date(from: $0.date) ?? Date() }
+        dates = data.map { return dateFormatter.date(from: $0.date) ?? Date() }
         
         /// title
-        let title = data.map { "BTC/USD closing price: \($0.close) change: \($0.change)%  volume: \($0.volume)" }
+        titles = data.map { "BTC/USD closing price: \($0.close) change: \($0.change)%  volume: \($0.volume)" }
         
-        // init chart
-        let chart = HITYieldCurveChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.height, height: UIScreen.main.bounds.width))
+        tapLineChart(self)
+    }
+    
+    @IBAction func tapLineChart(_ sender: Any) {
+        let chart = HITLineChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.height, height: UIScreen.main.bounds.width))
         chart.center = view.center
         chart.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
         view.addSubview(chart)
-        chart.draw(absMax, values: data.map{ $0.change }, dates: dates, titles: title)
-
+        let max = String((data.map{ $0.close }.max() ?? 0.0).rounded(.up))
+        let min = String((data.map{ $0.close }.min() ?? 0.0).rounded(.down))
+        chart.draw(absMax,
+                   values: data.map{ $0.change },
+                   label: (max: max, center: "", min: min),
+                   dates: dates,
+                   titles: titles)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeMultiChart(_:)))
+        chart.addGestureRecognizer(tapGesture)
+    }
+    
+    @IBAction func tapYieldCurveChart(_ sender: Any) {
+        let chart = HITLineChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.height, height: UIScreen.main.bounds.width))
+        chart.center = view.center
+        chart.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
+        view.addSubview(chart)
+        chart.draw(absMax,
+                   values: data.map{ $0.change },
+                   label: (max: "+\(absMax)%", center: "0%", min: "-\(absMax)%"),
+                   dates: dates,
+                   titles: titles)
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeMultiChart(_:)))
         chart.addGestureRecognizer(tapGesture)
     }

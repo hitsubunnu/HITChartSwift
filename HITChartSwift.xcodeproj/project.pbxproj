@@ -10,11 +10,11 @@
 		BD58DEDF206391E2009284BA /* HITChartSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD58DED5206391E2009284BA /* HITChartSwift.framework */; };
 		BD58DEE4206391E2009284BA /* HITChartSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD58DEE3206391E2009284BA /* HITChartSwiftTests.swift */; };
 		BD58DEE6206391E2009284BA /* HITChartSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = BD58DED8206391E2009284BA /* HITChartSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BD58DEF02063AB2E009284BA /* HITYieldCurveChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD58DEEF2063AB2E009284BA /* HITYieldCurveChartView.swift */; };
 		BD58DEF22063AC36009284BA /* AlgorithmSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD58DEF12063AC36009284BA /* AlgorithmSearch.swift */; };
-		BD58DEFA2063AF7B009284BA /* HITDimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD58DEF92063AF7B009284BA /* HITDimens.swift */; };
+		BD58DEFA2063AF7B009284BA /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD58DEF92063AF7B009284BA /* Dimens.swift */; };
 		BD58DEFC2063AFE2009284BA /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD58DEFB2063AFE2009284BA /* Date.swift */; };
 		BDCDCC73206901F400C05661 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDCC72206901F400C05661 /* UIColor.swift */; };
+		BDD6CFBC206B6CAB00E273DE /* HITLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6CFBB206B6CAB00E273DE /* HITLineChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +34,11 @@
 		BD58DEDE206391E2009284BA /* HITChartSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HITChartSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD58DEE3206391E2009284BA /* HITChartSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HITChartSwiftTests.swift; sourceTree = "<group>"; };
 		BD58DEE5206391E2009284BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BD58DEEF2063AB2E009284BA /* HITYieldCurveChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HITYieldCurveChartView.swift; sourceTree = "<group>"; };
 		BD58DEF12063AC36009284BA /* AlgorithmSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmSearch.swift; sourceTree = "<group>"; };
-		BD58DEF92063AF7B009284BA /* HITDimens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HITDimens.swift; sourceTree = "<group>"; };
+		BD58DEF92063AF7B009284BA /* Dimens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimens.swift; sourceTree = "<group>"; };
 		BD58DEFB2063AFE2009284BA /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		BDCDCC72206901F400C05661 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		BDD6CFBB206B6CAB00E273DE /* HITLineChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HITLineChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 		BD58DED7206391E2009284BA /* HITChartSwift */ = {
 			isa = PBXGroup;
 			children = (
-				BD58DEEF2063AB2E009284BA /* HITYieldCurveChartView.swift */,
+				BDD6CFBB206B6CAB00E273DE /* HITLineChartView.swift */,
 				BD58DEF42063AEDF009284BA /* Utility */,
 				BD58DED8206391E2009284BA /* HITChartSwift.h */,
 				BD58DED9206391E2009284BA /* Info.plist */,
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				BD58DEF12063AC36009284BA /* AlgorithmSearch.swift */,
-				BD58DEF92063AF7B009284BA /* HITDimens.swift */,
+				BD58DEF92063AF7B009284BA /* Dimens.swift */,
 				BD58DEFB2063AFE2009284BA /* Date.swift */,
 				BDCDCC72206901F400C05661 /* UIColor.swift */,
 			);
@@ -220,10 +220,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD58DEF02063AB2E009284BA /* HITYieldCurveChartView.swift in Sources */,
 				BDCDCC73206901F400C05661 /* UIColor.swift in Sources */,
 				BD58DEFC2063AFE2009284BA /* Date.swift in Sources */,
-				BD58DEFA2063AF7B009284BA /* HITDimens.swift in Sources */,
+				BDD6CFBC206B6CAB00E273DE /* HITLineChartView.swift in Sources */,
+				BD58DEFA2063AF7B009284BA /* Dimens.swift in Sources */,
 				BD58DEF22063AC36009284BA /* AlgorithmSearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

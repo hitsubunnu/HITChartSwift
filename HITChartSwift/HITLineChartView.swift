@@ -1,5 +1,5 @@
 //
-//  HITYieldCurveChartView.swift
+//  HITLineChartView.swift
 //  HITChartSwift
 //
 //  Created by hitsubunnu on 2018/03/22.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-open class HITYieldCurveChartView: UIView {
+open class HITLineChartView: UIView {
     @IBInspectable var background: UIColor = UIColor.white
     @IBInspectable var lineColor: UIColor = UIColor.color("0x0099aa")
     @IBInspectable var titleColor: UIColor = UIColor.color("0x0099aa")
     @IBInspectable var indicatorColor: UIColor = UIColor.color("0x0099aa")
     @IBInspectable var backgroundLineColor: UIColor = UIColor.color("0xe6e6e6")
     @IBInspectable var textColor: UIColor = UIColor.color("0x333333")
-    @IBInspectable var strokeWidth: CGFloat = 10
+    @IBInspectable var hapticFeedbackEnable: Bool = true
 
     private let kWidthRatio: CGFloat = 0.8
     private let kHeightRatio: CGFloat = 5/9
@@ -41,7 +41,7 @@ open class HITYieldCurveChartView: UIView {
     private let indicatorIcon = CAShapeLayer()
     private let indicatorText = CATextLayer()
     
-    public func draw(_ absMax: Int, values: [Double], dates: [Date], titles: [String]) {
+    public func draw(_ absMax: Int, values: [Double], label: (max: String, center: String, min: String), dates: [Date], titles: [String]) {
         self.layer.sublayers?.removeAll()
         self.absMax = absMax
         self.values = values
@@ -49,7 +49,7 @@ open class HITYieldCurveChartView: UIView {
         self.titles = titles
         self.previousIndex = values.count - 1
         
-        setupBackground()
+        setupBackground(max: label.max, center: label.center, min: label.min)
         setupTitle()
         setupSettleDate(dates)
         drawChart(values: values)
@@ -59,7 +59,7 @@ open class HITYieldCurveChartView: UIView {
         setupGestureRecognizer()
     }
     
-    private func setupBackground() {
+    private func setupBackground(max: String, center: String, min: String) {
         backgroundColor = background
         
         let width = bounds.width
@@ -70,17 +70,17 @@ open class HITYieldCurveChartView: UIView {
         // max
         let yMax = (height - height * kHeightRatio) / 2
         setupBackgroundLine(x: x, y: yMax, width: lineWidth)
-        setupBackgroundText(x: x, y: yMax, string: String(format:"+%d%%", absMax))
+        setupBackgroundText(x: x, y: yMax, string: max)
         
         // center
         let yCenter = height / 2
-        setupBackgroundLine(x: x, y: yCenter, width: lineWidth)
-        setupBackgroundText(x: x, y: yCenter, string: "0%")
-        
+        setupBackgroundCenterLine(x: x, y: yCenter, width: lineWidth)
+        setupBackgroundText(x: x, y: yCenter, string: center)
+
         // min
         let yMin = (height + height * kHeightRatio) / 2
         setupBackgroundLine(x: x, y: yMin, width: lineWidth)
-        setupBackgroundText(x: x, y: yMin, string: String(format:"-%d%%", absMax))
+        setupBackgroundText(x: x, y: yMin, string: min)
     }
     
     private func setupBackgroundLine(x: CGFloat, y: CGFloat, width: CGFloat) {
@@ -90,9 +90,23 @@ open class HITYieldCurveChartView: UIView {
         
         let layer = CAShapeLayer()
         layer.path = path.cgPath
-        layer.frame = frame
-        layer.fillColor = UIColor.clear.cgColor
         layer.strokeColor = backgroundLineColor.cgColor
+        layer.contentsScale = UIScreen.main.scale
+        
+        self.layer.addSublayer(layer)
+    }
+
+    private func setupBackgroundCenterLine(x: CGFloat, y: CGFloat, width: CGFloat) {
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: x, y: y))
+        path.addLine(to: CGPoint(x: x + width, y: y))
+        
+        let layer = CAShapeLayer()
+        layer.path = path.cgPath
+        layer.strokeColor = backgroundLineColor.cgColor
+        layer.lineWidth = 1
+        layer.lineJoin = kCALineJoinRound
+        layer.lineDashPattern = [NSNumber(value: 2)]
         layer.contentsScale = UIScreen.main.scale
         
         self.layer.addSublayer(layer)
@@ -100,17 +114,17 @@ open class HITYieldCurveChartView: UIView {
     
     private func setupBackgroundText(x: CGFloat, y: CGFloat, string: String) {
         let text = CATextLayer()
-        let textWidth: CGFloat = 32.0
+        let textWidth: CGFloat = 44.0
         let textHeight: CGFloat = 12.0
         let xText = x - textWidth
         let yText = y - textHeight / 2
         text.string = string
         text.foregroundColor = textColor.cgColor
-        text.fontSize = HITDimens.Txt.s.rawValue
-        text.font = UIFont.systemFont(ofSize: HITDimens.Txt.s.rawValue)
+        text.fontSize = Dimens.Txt.s.rawValue
+        text.font = UIFont.systemFont(ofSize: Dimens.Txt.s.rawValue)
         text.frame = CGRect(x: xText, y: yText, width: textWidth, height: textHeight)
         text.contentsScale = UIScreen.main.scale
-        text.alignmentMode = kCAAlignmentCenter
+        text.alignmentMode = kCAAlignmentLeft
         
         self.layer.addSublayer(text)
     }
@@ -132,8 +146,8 @@ open class HITYieldCurveChartView: UIView {
             let layer = CATextLayer()
             layer.string = choosedDate.date.yyyy_mm_dd()
             layer.foregroundColor = textColor.cgColor
-            layer.fontSize = HITDimens.Txt.s.rawValue
-            layer.font = UIFont.systemFont(ofSize: HITDimens.Txt.s.rawValue)
+            layer.fontSize = Dimens.Txt.s.rawValue
+            layer.font = UIFont.systemFont(ofSize: Dimens.Txt.s.rawValue)
             layer.frame = CGRect(x: x, y: y, width: layerWidth, height: layerHeight)
             layer.contentsScale = UIScreen.main.scale
             layer.alignmentMode = kCAAlignmentCenter
@@ -233,14 +247,14 @@ open class HITYieldCurveChartView: UIView {
         let width = bounds.width
         let height = bounds.height
         let x: CGFloat = (width - width * kWidthRatio) / 2
-        let y: CGFloat = (height - height*kHeightRatio)/4 - HITDimens.Txt.l.rawValue/2
+        let y: CGFloat = (height - height*kHeightRatio)/4 - Dimens.Txt.l.rawValue/2
         let textWidth: CGFloat = width*kWidthRatio
         let textHeight: CGFloat = 20.0
         
         setupTitleText(titles.last)
         titleText.foregroundColor = titleColor.cgColor
-        titleText.fontSize = HITDimens.Txt.l.rawValue
-        titleText.font = UIFont.boldSystemFont(ofSize: HITDimens.Txt.l.rawValue)
+        titleText.fontSize = Dimens.Txt.l.rawValue
+        titleText.font = UIFont.boldSystemFont(ofSize: Dimens.Txt.l.rawValue)
         titleText.frame = CGRect(x: x, y: y, width: textWidth, height: textHeight)
         titleText.contentsScale = UIScreen.main.scale
         titleText.alignmentMode = kCAAlignmentLeft
@@ -299,7 +313,7 @@ open class HITYieldCurveChartView: UIView {
         indicatorText.alignmentMode = kCAAlignmentCenter
         indicatorText.foregroundColor = UIColor.white.cgColor
         indicatorText.backgroundColor = indicatorColor.cgColor
-        indicatorText.fontSize = HITDimens.Txt.s.rawValue
+        indicatorText.fontSize = Dimens.Txt.s.rawValue
         indicatorText.font = UIFont.boldSystemFont(ofSize: 9)
         indicatorText.frame = CGRect(x: xText, y: absMinY + margin, width: kIndicatorTextWidth, height: kIndicatorTextHeight)
         indicatorText.contentsScale = UIScreen.main.scale
@@ -344,7 +358,7 @@ open class HITYieldCurveChartView: UIView {
         indicator.path = path.cgPath
         indicatorText.frame = CGRect(x: xText, y: absMinY + margin, width: kIndicatorTextWidth, height: kIndicatorTextHeight)
         indicatorText.string = dates[index].yyyy_mm_dd()
-        if #available(iOS 10.0, *) {
+        if #available(iOS 10.0, *), hapticFeedbackEnable {
             UISelectionFeedbackGenerator().selectionChanged()
         }
         CATransaction.commit()
