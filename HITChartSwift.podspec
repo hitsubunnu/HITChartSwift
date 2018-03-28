@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "HITChartSwift"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A bitcoin and stock chart lib for iOS."
   s.homepage     = "https://github.com/hitsubunnu/HITChartSwift"
   s.license      = "MIT"
