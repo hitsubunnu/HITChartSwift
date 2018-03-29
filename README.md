@@ -31,7 +31,7 @@ open HITChartSwift.xcworkspace
 Simply add the following line to your <code>Podfile</code>:
 
     platform :ios, '9.0'
-    pod 'HITChartSwift', :git => 'https://github.com/hitsubunnu/HITChartSwift.git'
+    pod 'HITChartSwift'
 
 ## Usage
 
