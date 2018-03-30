@@ -219,7 +219,7 @@ open class HITLineChartView: UIView {
     }
     
     /**
-     * @brief absMaxに対して、CGPointのY座標を求める
+     * @brief base on absMax, seek Y coordinate
      */
     private func getY(pointY: Double?) -> CGFloat {
         let height = bounds.height
