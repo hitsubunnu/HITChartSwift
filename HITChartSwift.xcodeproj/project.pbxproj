@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD3E0FEE20737D8E0066A945 /* HITCandlestickChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E0FED20737D8E0066A945 /* HITCandlestickChartView.swift */; };
 		BD58DEDF206391E2009284BA /* HITChartSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD58DED5206391E2009284BA /* HITChartSwift.framework */; };
 		BD58DEE4206391E2009284BA /* HITChartSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD58DEE3206391E2009284BA /* HITChartSwiftTests.swift */; };
 		BD58DEE6206391E2009284BA /* HITChartSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = BD58DED8206391E2009284BA /* HITChartSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD3E0FED20737D8E0066A945 /* HITCandlestickChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HITCandlestickChartView.swift; sourceTree = "<group>"; };
 		BD58DED5206391E2009284BA /* HITChartSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HITChartSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD58DED8206391E2009284BA /* HITChartSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HITChartSwift.h; sourceTree = "<group>"; };
 		BD58DED9206391E2009284BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				BDD6CFBB206B6CAB00E273DE /* HITLineChartView.swift */,
+				BD3E0FED20737D8E0066A945 /* HITCandlestickChartView.swift */,
 				BD58DEF42063AEDF009284BA /* Utility */,
 				BD58DED8206391E2009284BA /* HITChartSwift.h */,
 				BD58DED9206391E2009284BA /* Info.plist */,
@@ -221,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDCDCC73206901F400C05661 /* UIColor.swift in Sources */,
+				BD3E0FEE20737D8E0066A945 /* HITCandlestickChartView.swift in Sources */,
 				BD58DEFC2063AFE2009284BA /* Date.swift in Sources */,
 				BDD6CFBC206B6CAB00E273DE /* HITLineChartView.swift in Sources */,
 				BD58DEFA2063AF7B009284BA /* Dimens.swift in Sources */,
