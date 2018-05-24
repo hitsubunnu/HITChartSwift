@@ -1,11 +1,11 @@
 # HITChartSwift
 A bitcoin and stock chart lib for iOS. Written in Swift.
 
-## line chart
+## Line chart
 closing price chart:
 ![](https://github.com/hitsubunnu/HITChartSwift/blob/master/images/close.gif)
 
-candlestick chart:
+## Candlestick chart
 ![](https://github.com/hitsubunnu/HITChartSwift/blob/master/images/candlestick.gif)
 
 ## Requirements
@@ -13,6 +13,7 @@ candlestick chart:
 - Swift 4
 
 ## Sample Project
+See [HITChartSwiftSample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift)
 Build and run the <i>HITChartSwiftSample</i> project in Xcode.
 
 ```
