@@ -15,6 +15,7 @@ closing price chart:
 ## Sample Project
 See [HITChartSwiftSample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift)
 
+
 Build and run the <i>HITChartSwiftSample</i> project in Xcode.
 
 ```
