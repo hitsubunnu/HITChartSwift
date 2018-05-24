@@ -5,8 +5,8 @@ A bitcoin and stock chart lib for iOS. Written in Swift.
 closing price chart:
 ![](https://github.com/hitsubunnu/HITChartSwift/blob/master/images/close.gif)
 
-yield curve chart:
-![](https://github.com/hitsubunnu/HITChartSwift/blob/master/images/yieldcurve.gif)
+candlestick chart:
+![](https://github.com/hitsubunnu/HITChartSwift/blob/master/images/candlestick.gif)
 
 ## Requirements
 - iOS 9.0+
