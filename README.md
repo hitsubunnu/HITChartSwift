@@ -16,8 +16,6 @@ closing price chart:
 - Swift 4
 
 ## Sample Project
-See [HITChartSwiftSample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift)
-
 
 Build and run the <i>HITChartSwiftSample</i> project in Xcode.
 
@@ -58,7 +56,7 @@ data format:
 (date: "2018/03/01", close: 10925.00, open: 10316.00, high: 11087.00, low: 10224.00, volume: 33.87, change: 5.91)
 ```
 
-initialization：
+initialize chart:
 ```
 let chart = HITLineChartView(frame: CGRect(x: 0, y: 0, width: 812, height: 375))
 view.addSubview(chart)
@@ -78,7 +76,7 @@ data format:
 (date: "2018/03/01", close: 10925.00, open: 10316.00, high: 11087.00, low: 10224.00, volume: 33.87, change: 5.91)
 ```
 
-initialization：
+initialize chart:
 ```
 let chart = HITCandlestickChartView(frame: CGRect(x: 0, y: 0, width: 812, height: 375))
 view.addSubview(chart)
