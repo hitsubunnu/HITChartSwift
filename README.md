@@ -42,22 +42,67 @@ Simply add the following line to your <code>Podfile</code>:
 ## Usage
 
 ### Source Code Way
+See [HITChartSwiftSample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift)
 
 #### Import HITChartSwift to your source file
 ```
 import HITChartSwift
 ```
 
+#### Line Chart
+See [Sample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift#L75)
+
+data format:
 ```
-let chart = HITLineChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.height, height: UIScreen.main.bounds.width))
+(date: "2018/02/28", close: 10315.00, open: 10583.00, high: 11063.00, low: 10270.00, volume: 43.89, change: -2.40),
+(date: "2018/03/01", close: 10925.00, open: 10316.00, high: 11087.00, low: 10224.00, volume: 33.87, change: 5.91)
+```
+
+initialization：
+```
+let chart = HITLineChartView(frame: CGRect(x: 0, y: 0, width: 812, height: 375))
 view.addSubview(chart)
-chart.draw(absMax, values: data.map{ $0.change }, label: (max: max, center: "", min: min), dates: dates, titles: titles)
+chart.draw(absMax, 
+            values: data.map{ $0.change }, 
+            label: (max: max, center: "", min: min), 
+            dates: dates, 
+            titles: titles)
 ```
-See [HITChartSwiftSample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift)
+
+#### Candlestick Chart
+See [Sample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift#L107)
+
+data format:
+```
+(date: "2018/02/28", close: 10315.00, open: 10583.00, high: 11063.00, low: 10270.00, volume: 43.89, change: -2.40),
+(date: "2018/03/01", close: 10925.00, open: 10316.00, high: 11087.00, low: 10224.00, volume: 33.87, change: 5.91)
+```
+
+initialization：
+```
+let chart = HITCandlestickChartView(frame: CGRect(x: 0, y: 0, width: 812, height: 375))
+view.addSubview(chart)
+chart.draw(absMaxPercentage,
+            values: data.map{ (close: $0.close, open: $0.open, high: $0.high, low: $0.low) },
+            label: (max: "+\(absMaxPercentage)%", center: "", min: "-\(absMaxPercentage)%"),
+            dates: dates,
+            titles: titles)
+```
+
+#### Pie Chart
+See [Sample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift#L122)
+
+```
+let chart = HITPieChartView(frame: CGRect(x: 0, y: 0, width: 375, height: 375))
+view.addSubview(chart)
+chart.draw([(value: 50, color: UIColor.red), (value: 20, color: UIColor.blue), (value: 30, color: UIColor.yellow) ],
+            strokeWidth: 100,
+            animation: true)
+```
 
 ### Interface Builder Way
 
-Setup custom class to HITYieldCurveChartView 
+Setup custom class to HITLineChartView 
 
 ![](https://github.com/hitsubunnu/HITChartSwift/blob/master/images/ib-1.png)
 
