@@ -37,10 +37,10 @@ Simply add the following line to your <code>Podfile</code>:
     platform :ios, '9.0'
     pod 'HITChartSwift'
 
-## Usage
+## Usage 
+See [HITChartSwiftSample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift)
 
 ### Source Code Way
-See [HITChartSwiftSample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift)
 
 #### Import HITChartSwift to your source file
 ```
