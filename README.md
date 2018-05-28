@@ -60,9 +60,9 @@ initialize chart:
 ```
 let chart = HITLineChartView(frame: CGRect(x: 0, y: 0, width: 812, height: 375))
 view.addSubview(chart)
-chart.draw(absMax, 
+chart.draw(absMaxPercentage, 
             values: data.map{ $0.change }, 
-            label: (max: max, center: "", min: min), 
+            label: (max: "+\(absMaxPercentage)%", center: "", min: "-\(absMaxPercentage)%"),
             dates: dates, 
             titles: titles)
 ```
