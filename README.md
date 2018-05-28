@@ -8,6 +8,9 @@ closing price chart:
 ## Candlestick chart
 ![](https://github.com/hitsubunnu/HITChartSwift/blob/master/images/candlestick.gif)
 
+## Pie chart
+![](https://github.com/hitsubunnu/HITChartSwift/blob/master/images/pie.gif)
+
 ## Requirements
 - iOS 9.0+
 - Swift 4

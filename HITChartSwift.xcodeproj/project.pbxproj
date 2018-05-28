@@ -14,6 +14,7 @@
 		BD58DEF22063AC36009284BA /* AlgorithmSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD58DEF12063AC36009284BA /* AlgorithmSearch.swift */; };
 		BD58DEFA2063AF7B009284BA /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD58DEF92063AF7B009284BA /* Dimens.swift */; };
 		BD58DEFC2063AFE2009284BA /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD58DEFB2063AFE2009284BA /* Date.swift */; };
+		BDB8B02D20BC073B001E8AFC /* HITPieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB8B02C20BC073B001E8AFC /* HITPieChartView.swift */; };
 		BDCDCC73206901F400C05661 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDCC72206901F400C05661 /* UIColor.swift */; };
 		BDD6CFBC206B6CAB00E273DE /* HITLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6CFBB206B6CAB00E273DE /* HITLineChartView.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,7 @@
 		BD58DEF12063AC36009284BA /* AlgorithmSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmSearch.swift; sourceTree = "<group>"; };
 		BD58DEF92063AF7B009284BA /* Dimens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimens.swift; sourceTree = "<group>"; };
 		BD58DEFB2063AFE2009284BA /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		BDB8B02C20BC073B001E8AFC /* HITPieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HITPieChartView.swift; sourceTree = "<group>"; };
 		BDCDCC72206901F400C05661 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		BDD6CFBB206B6CAB00E273DE /* HITLineChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HITLineChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 			children = (
 				BDD6CFBB206B6CAB00E273DE /* HITLineChartView.swift */,
 				BD3E0FED20737D8E0066A945 /* HITCandlestickChartView.swift */,
+				BDB8B02C20BC073B001E8AFC /* HITPieChartView.swift */,
 				BD58DEF42063AEDF009284BA /* Utility */,
 				BD58DED8206391E2009284BA /* HITChartSwift.h */,
 				BD58DED9206391E2009284BA /* Info.plist */,
@@ -225,6 +228,7 @@
 			files = (
 				BDCDCC73206901F400C05661 /* UIColor.swift in Sources */,
 				BD3E0FEE20737D8E0066A945 /* HITCandlestickChartView.swift in Sources */,
+				BDB8B02D20BC073B001E8AFC /* HITPieChartView.swift in Sources */,
 				BD58DEFC2063AFE2009284BA /* Date.swift in Sources */,
 				BDD6CFBC206B6CAB00E273DE /* HITLineChartView.swift in Sources */,
 				BD58DEFA2063AF7B009284BA /* Dimens.swift in Sources */,

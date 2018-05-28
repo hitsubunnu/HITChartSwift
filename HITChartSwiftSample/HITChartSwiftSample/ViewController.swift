@@ -68,7 +68,7 @@ class ViewController: UIViewController {
         /// title
         titles = data.map { "BTC/USD closing price: \($0.close) change: \($0.change)%  volume: \($0.volume)" }
         
-        tapCandlestickChart(self)
+        tapPieChart(self)
     }
     
     @IBAction func tapLineChart(_ sender: Any) {
@@ -114,6 +114,18 @@ class ViewController: UIViewController {
                    dates: dates,
                    titles: titles)
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeMultiChart(_:)))
+        chart.addGestureRecognizer(tapGesture)
+    }
+    
+    @IBAction func tapPieChart(_ sender: Any) {
+        let chart = HITPieChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 10, height: UIScreen.main.bounds.height))
+        chart.center = view.center
+        view.addSubview(chart)
+        chart.draw([(value: 50, color: UIColor.red), (value: 20, color: UIColor.blue), (value: 30, color: UIColor.yellow) ],
+                   strokeWidth: 100,
+                   animation: true)
+
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeMultiChart(_:)))
         chart.addGestureRecognizer(tapGesture)
     }
