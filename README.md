@@ -40,7 +40,7 @@ import HITChartSwift
 ```
 
 #### Line Chart
-See [Sample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift#L75)
+See [Sample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift#L76)
 
 data format:
 ```
@@ -60,7 +60,7 @@ chart.draw(absMaxPercentage,
 ```
 
 #### Candlestick Chart
-See [Sample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift#L107)
+See [Sample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift#L120)
 
 data format:
 ```
@@ -80,7 +80,7 @@ chart.draw(absMaxPercentage,
 ```
 
 #### Pie Chart
-See [Sample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift#L122)
+See [Sample](https://github.com/hitsubunnu/HITChartSwift/blob/master/HITChartSwiftSample/HITChartSwiftSample/ViewController.swift#L146)
 
 ```
 let chart = HITPieChartView(frame: CGRect(x: 0, y: 0, width: 375, height: 375))
