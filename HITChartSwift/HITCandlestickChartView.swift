@@ -125,7 +125,7 @@ open class HITCandlestickChartView: UIView {
     
     private func setupBackgroundText(x: CGFloat, y: CGFloat, string: String) {
         let text = CATextLayer()
-        let textWidth: CGFloat = 44.0
+        let textWidth: CGFloat = 30.0
         let textHeight: CGFloat = 12.0
         let xText = x - textWidth
         let yText = y - textHeight / 2
