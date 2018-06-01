@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,48 +18,87 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="CV5-2c-lxl">
-                                <rect key="frame" x="0.0" y="20" width="375" height="168"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIt-2D-4yA">
+                                <rect key="frame" x="0.0" y="20" width="375" height="260"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wl6-Yu-zkg">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
-                                        <state key="normal" title="Line Chart"/>
-                                        <connections>
-                                            <action selector="tapLineChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lPS-Il-22O"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0D-BY-k83">
-                                        <rect key="frame" x="0.0" y="46" width="375" height="30"/>
-                                        <state key="normal" title="Yield Curve Chart"/>
-                                        <connections>
-                                            <action selector="tapYieldCurveChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0WF-TY-Wv9"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXV-Qx-0Ic">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="30"/>
-                                        <state key="normal" title="K-Line (Candlestick)"/>
-                                        <connections>
-                                            <action selector="tapCandlestickChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OwR-vq-lEl"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7P-wX-GNW">
-                                        <rect key="frame" x="0.0" y="138" width="375" height="30"/>
-                                        <state key="normal" title="Pie"/>
-                                        <connections>
-                                            <action selector="tapPieChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="osC-gq-CIo"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="CV5-2c-lxl">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wl6-Yu-zkg">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                                <state key="normal" title="Line Chart"/>
+                                                <connections>
+                                                    <action selector="tapLineChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lPS-Il-22O"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNc-Vq-pvG">
+                                                <rect key="frame" x="0.0" y="46" width="375" height="30"/>
+                                                <state key="normal" title="Line Chart Landscape"/>
+                                                <connections>
+                                                    <action selector="tapLineChartLandscape:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ivo-7x-kn5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0D-BY-k83">
+                                                <rect key="frame" x="0.0" y="92" width="375" height="30"/>
+                                                <state key="normal" title="Yield Curve Chart Landscape"/>
+                                                <connections>
+                                                    <action selector="tapYieldCurveChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0WF-TY-Wv9"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXV-Qx-0Ic">
+                                                <rect key="frame" x="0.0" y="138" width="375" height="30"/>
+                                                <state key="normal" title="K-Line (Candlestick)"/>
+                                                <connections>
+                                                    <action selector="tapCandlestickChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OwR-vq-lEl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKQ-vn-hnE">
+                                                <rect key="frame" x="0.0" y="184" width="375" height="30"/>
+                                                <state key="normal" title="K-Line (Candlestick) Landscape"/>
+                                                <connections>
+                                                    <action selector="tapCandlestickChartLandscape:" destination="BYZ-38-t0r" eventType="touchUpInside" id="joz-Wt-oGd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7P-wX-GNW">
+                                                <rect key="frame" x="0.0" y="230" width="375" height="30"/>
+                                                <state key="normal" title="Pie"/>
+                                                <connections>
+                                                    <action selector="tapPieChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="osC-gq-CIo"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.49019607840000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="CV5-2c-lxl" firstAttribute="top" secondItem="cIt-2D-4yA" secondAttribute="top" id="LkN-XE-lpO"/>
+                                    <constraint firstItem="CV5-2c-lxl" firstAttribute="leading" secondItem="cIt-2D-4yA" secondAttribute="leading" id="Osw-vV-Obb"/>
+                                    <constraint firstAttribute="trailing" secondItem="CV5-2c-lxl" secondAttribute="trailing" id="gPY-l1-kIp"/>
+                                    <constraint firstAttribute="height" constant="260" id="iTH-tN-M0G"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWe-MF-aFs">
+                                <rect key="frame" x="0.0" y="280" width="375" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="mWh-rh-jcw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CV5-2c-lxl" secondAttribute="trailing" id="91s-yF-nbX"/>
-                            <constraint firstItem="CV5-2c-lxl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LdQ-5V-O76"/>
-                            <constraint firstItem="CV5-2c-lxl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jMV-bA-zmj"/>
+                            <constraint firstItem="pWe-MF-aFs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5q3-ax-YYv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pWe-MF-aFs" secondAttribute="trailing" id="8qB-Yz-ZQz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cIt-2D-4yA" secondAttribute="trailing" id="XSz-8h-w0X"/>
+                            <constraint firstItem="cIt-2D-4yA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZZk-WC-rj0"/>
+                            <constraint firstItem="pWe-MF-aFs" firstAttribute="top" secondItem="cIt-2D-4yA" secondAttribute="bottom" id="Zw9-Gz-Z6s"/>
+                            <constraint firstItem="cIt-2D-4yA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aS0-bj-fhU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="displayView" destination="pWe-MF-aFs" id="K89-PU-Mkh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

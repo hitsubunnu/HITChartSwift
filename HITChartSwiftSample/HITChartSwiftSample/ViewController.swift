@@ -10,6 +10,7 @@ import UIKit
 import HITChartSwift
 
 class ViewController: UIViewController {
+    @IBOutlet weak var displayView: UIView!
     
     private let data = [
         (date: "2018/02/28", close: 10315.00, open: 10583.00, high: 11063.00, low: 10270.00, volume: 43.89, change: -2.40),
@@ -72,6 +73,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapLineChart(_ sender: Any) {
+        let chart = HITLineChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: displayView.bounds.height))
+        displayView.addSubview(chart)
+        let max = String((data.map{ $0.close }.max() ?? 0.0).rounded(.up))
+        let min = String((data.map{ $0.close }.min() ?? 0.0).rounded(.down))
+        chart.draw(absMaxPercentage,
+                   values: data.map{ $0.change },
+                   label: (max: max, center: "", min: min),
+                   dates: dates,
+                   titles: titles)
+        
+        addCloseEvent(chart)
+    }
+    
+    @IBAction func tapLineChartLandscape(_ sender: Any) {
         let chart = HITLineChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.height, height: UIScreen.main.bounds.width))
         chart.center = view.center
         chart.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
@@ -84,14 +99,13 @@ class ViewController: UIViewController {
                    dates: dates,
                    titles: titles)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeMultiChart(_:)))
-        chart.addGestureRecognizer(tapGesture)
+        addCloseEvent(chart)
     }
-    
+
     @IBAction func tapYieldCurveChart(_ sender: Any) {
         let chart = HITLineChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.height, height: UIScreen.main.bounds.width))
-        chart.center = view.center
         chart.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
+        chart.center = view.center
         view.addSubview(chart)
         chart.draw(absMaxPercentage,
                    values: data.map{ $0.change },
@@ -99,11 +113,22 @@ class ViewController: UIViewController {
                    dates: dates,
                    titles: titles)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeMultiChart(_:)))
-        chart.addGestureRecognizer(tapGesture)
+        addCloseEvent(chart)
+    }
+
+    @IBAction func tapCandlestickChart(_ sender: Any) {
+        let chart = HITCandlestickChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: displayView.bounds.height))
+        displayView.addSubview(chart)
+        chart.draw(absMaxPercentage,
+                   values: data.map{ (close: $0.close, open: $0.open, high: $0.high, low: $0.low) },
+                   label: (max: "+\(absMaxPercentage)%", center: "", min: "-\(absMaxPercentage)%"),
+                   dates: dates,
+                   titles: titles)
+        
+        addCloseEvent(chart)
     }
     
-    @IBAction func tapCandlestickChart(_ sender: Any) {
+    @IBAction func tapCandlestickChartLandscape(_ sender: Any) {
         let chart = HITCandlestickChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.height, height: UIScreen.main.bounds.width))
         chart.center = view.center
         chart.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
@@ -114,23 +139,26 @@ class ViewController: UIViewController {
                    dates: dates,
                    titles: titles)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeMultiChart(_:)))
-        chart.addGestureRecognizer(tapGesture)
+        addCloseEvent(chart)
     }
     
     @IBAction func tapPieChart(_ sender: Any) {
-        let chart = HITPieChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 10, height: UIScreen.main.bounds.height))
-        chart.center = view.center
-        view.addSubview(chart)
+        let chart = HITPieChartView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        displayView.addSubview(chart)
+        chart.center.x = displayView.center.x
         chart.draw([(value: 50, color: UIColor.red), (value: 20, color: UIColor.blue), (value: 30, color: UIColor.yellow) ],
-                   strokeWidth: 100,
+                   strokeWidth: 80,
                    animation: true)
-
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeMultiChart(_:)))
+        
+        addCloseEvent(chart)
+    }
+    
+    private func addCloseEvent(_ chart: UIView) {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeChart(_:)))
         chart.addGestureRecognizer(tapGesture)
     }
     
-    @objc func closeMultiChart(_ sender: UITapGestureRecognizer) {
+    @objc func closeChart(_ sender: UITapGestureRecognizer) {
         guard let view = sender.view else { return }
         view.removeFromSuperview()
     }
