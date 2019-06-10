@@ -5,7 +5,7 @@ A bitcoin and stock chart lib for iOS. Written in Swift.
 
 ## Requirements
 - iOS 9.0+
-- Swift 4
+- Swift 5
 
 ## Sample Project
 

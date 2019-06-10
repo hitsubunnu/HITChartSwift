@@ -45,7 +45,7 @@ open class HITPieChartView: UIView {
                 
                 animation.fromValue = 0
                 animation.toValue = 1
-                animation.fillMode = "backwards"
+                animation.fillMode = CAMediaTimingFillMode.backwards
                 
                 shapeLayer.add(animation, forKey: "strokeEnd")
             }

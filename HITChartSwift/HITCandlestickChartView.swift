@@ -116,7 +116,7 @@ open class HITCandlestickChartView: UIView {
         layer.path = path.cgPath
         layer.strokeColor = backgroundLineColor.cgColor
         layer.lineWidth = 1
-        layer.lineJoin = kCALineJoinRound
+        layer.lineJoin = CAShapeLayerLineJoin.round
         layer.lineDashPattern = [NSNumber(value: 2)]
         layer.contentsScale = UIScreen.main.scale
         
@@ -135,7 +135,7 @@ open class HITCandlestickChartView: UIView {
         text.font = UIFont.systemFont(ofSize: Dimens.Txt.s.rawValue)
         text.frame = CGRect(x: xText, y: yText, width: textWidth, height: textHeight)
         text.contentsScale = UIScreen.main.scale
-        text.alignmentMode = kCAAlignmentLeft
+        text.alignmentMode = CATextLayerAlignmentMode.left
         
         self.layer.addSublayer(text)
     }
@@ -227,7 +227,7 @@ open class HITCandlestickChartView: UIView {
         titleText.font = UIFont.boldSystemFont(ofSize: Dimens.Txt.l.rawValue)
         titleText.frame = CGRect(x: x, y: y, width: textWidth, height: textHeight)
         titleText.contentsScale = UIScreen.main.scale
-        titleText.alignmentMode = kCAAlignmentLeft
+        titleText.alignmentMode = CATextLayerAlignmentMode.left
         self.layer.addSublayer(titleText)
     }
     
@@ -253,7 +253,7 @@ open class HITCandlestickChartView: UIView {
         indicator.strokeColor = indicatorColor.cgColor
         indicator.contentsScale = UIScreen.main.scale
         indicator.lineWidth = 0.5
-        indicator.lineJoin = kCALineJoinRound
+        indicator.lineJoin = CAShapeLayerLineJoin.round
         indicator.lineDashPattern = [NSNumber(value: 2)]
         indicator.add(setupEndingAnimation(), forKey: kOpacityAnimetionKeyPath)
         
@@ -280,14 +280,14 @@ open class HITCandlestickChartView: UIView {
         let absMinY = bounds.height/2 + bounds.height*kHeightRatio/2
         let margin: CGFloat = 10
         indicatorText.string = dates.last?.yyyy_mm_dd()
-        indicatorText.alignmentMode = kCAAlignmentCenter
+        indicatorText.alignmentMode = CATextLayerAlignmentMode.center
         indicatorText.foregroundColor = UIColor.white.cgColor
         indicatorText.backgroundColor = indicatorColor.cgColor
         indicatorText.fontSize = Dimens.Txt.s.rawValue
         indicatorText.font = UIFont.boldSystemFont(ofSize: 9)
         indicatorText.frame = CGRect(x: xText, y: absMinY + margin, width: kIndicatorTextWidth, height: kIndicatorTextHeight)
         indicatorText.contentsScale = UIScreen.main.scale
-        indicatorText.alignmentMode = kCAAlignmentCenter
+        indicatorText.alignmentMode = CATextLayerAlignmentMode.center
         indicatorText.add(setupEndingAnimation(), forKey: kOpacityAnimetionKeyPath)
         
         self.layer.addSublayer(indicatorText)
@@ -300,7 +300,7 @@ open class HITCandlestickChartView: UIView {
         animation.fromValue = 0.0
         animation.toValue = 1.0
         animation.isRemovedOnCompletion = false
-        animation.fillMode = kCAFillModeBoth
+        animation.fillMode = CAMediaTimingFillMode.both
         return animation
     }
     
