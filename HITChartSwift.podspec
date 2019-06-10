@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/hitsubunnu/HITChartSwift"
   s.license      = "MIT"
   s.author       = { "hitsubunnu" => "idhitsu@gmail.com" }
-  s.swift_version = "4.0"
+  s.swift_version = "5.0"
   s.ios.deployment_target = "9.0"
   s.source       = { :git => "https://github.com/hitsubunnu/HITChartSwift.git", :tag => "#{s.version}" }
   s.source_files  = "HITChartSwift/*", "HITChartSwift/**/*.swift"
