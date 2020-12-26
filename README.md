@@ -1,7 +1,17 @@
 # HITChartSwift
 A bitcoin and stock chart lib for iOS. Written in Swift.
 
-<img src="https://github.com/hitsubunnu/HITChartSwift/blob/master/images/samples.gif" width="812">
+|Line Chart|Line Chart Landscape|
+|-|-|
+|<img src="./images/line.gif" width="300">|<img src="./images/line_landscape.gif" width="600">|
+
+|K-Line Chart|K-Line Chart Landscape|
+|-|-|
+|<img src="./images/kline.gif" width="300">|<img src="./images/kline_landscape.gif" width="600">|
+
+|Pie|
+|-|
+|<img src="./images/pie.gif" width="300">|
 
 ## Requirements
 - iOS 9.0+
